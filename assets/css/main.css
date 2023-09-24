@@ -4693,10 +4693,12 @@ input, select, textarea {
   #timeline {
 	display: flex;
 	background-color: #031625;
+	height: 100vh;
   
 	&:hover {
 	  .tl-item {
 		width: 23.3333%;
+		height: 105%;
 	  }
 	}
   }
