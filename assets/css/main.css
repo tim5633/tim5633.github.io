@@ -4818,12 +4818,88 @@ input, select, textarea {
   
 
 /* User preference overrides */
-body, input, select, textarea, button {
-	font-family: Arial, sans-serif !important;
-}
-
 body, h1, h2, h3, h4, h5, h6, p, a, li, span, label, th, td, blockquote, pre, code {
 	text-align: left !important;
+}
+
+/* Timeline readability and spacing overrides */
+#timeline {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.25rem;
+	background: transparent;
+	height: auto;
+}
+
+.tl-item {
+	width: 100%;
+	height: auto;
+	min-height: 0;
+	padding: 1.5rem;
+	color: #212931;
+	background: #ffffff;
+	border: 1px solid #eeeeee;
+	overflow: visible;
+	transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.tl-item:before,
+.tl-item:after {
+	display: none;
+}
+
+.tl-item:hover {
+	width: 100% !important;
+	transform: translateY(-2px);
+	box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
+}
+
+.tl-content {
+	position: static;
+	top: auto;
+	z-index: auto;
+	opacity: 1;
+	transform: none;
+	font-size: 0.95rem;
+	margin: 0;
+	text-align: left !important;
+}
+
+.tl-content h1 {
+	margin: 0.35rem 0 0.75rem 0;
+	font-family: inherit;
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-transform: none;
+	color: #212931;
+}
+
+.tl-content p {
+	margin-bottom: 1rem;
+}
+
+.tl-year {
+	position: static;
+	top: auto;
+	left: auto;
+	transform: none;
+	z-index: auto;
+	border: 0;
+}
+
+.tl-year p {
+	margin: 0;
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.4;
+	color: #18bfef;
+}
+
+@media screen and (max-width: 980px) {
+	#timeline {
+		grid-template-columns: 1fr;
+	}
 }
   
   
